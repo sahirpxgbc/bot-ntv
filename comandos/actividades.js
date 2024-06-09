@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+/*const Discord = require('discord.js');
 const rolesPermitidos = [
   '1151698401457602580', 
   '1041737341519282256', 
@@ -34,6 +34,45 @@ module.exports = {
           + ' * `📸` Asiste a la reunión semanal.\n\n'
           + ' `💼` Si no sabes donde subir tus actividades semanales mira: `/ayuda-actividades`'
           + ' ***`💡` Estas actividades se reiniciarán el 20/04/24 `💡`***'
+        )
+        .setFooter('Solicitado por: ' + message.member.displayName, message.author.avatarURL())
+        .setTimestamp();
+      message.channel.send(embed);
+    } catch (error) {
+      console.error(error);
+      message.reply('Hubo un error al ejecutar el comando.');
+    }
+  },
+};*/
+
+const Discord = require('discord.js');
+const rolesPermitidos = [
+  '1151698401457602580', 
+  '1041737341519282256', 
+  '1091895225783435345'
+];
+
+module.exports = {
+  name: 'actividades',
+  description: 'Envia las actividades semanales para los usuarios.',
+  async execute(message, args) {
+    try {
+      await message.delete();
+
+      const tieneRolPermitido = message.member.roles.cache.some(role => rolesPermitidos.includes(role.id));
+      if (!tieneRolPermitido) {
+        return message.reply('No tienes permiso para usar este comando.');
+      }
+
+      const embed = new Discord.MessageEmbed()
+        .setTitle
+        (
+          '`🧭` Actividades semanales `🧭`'
+        )
+        .setColor(0xEAB607)
+        .setDescription
+        (
+          'Las actividades semanales estan en proceso de publicación, por favor vuelve más tarde.'
         )
         .setFooter('Solicitado por: ' + message.member.displayName, message.author.avatarURL())
         .setTimestamp();
