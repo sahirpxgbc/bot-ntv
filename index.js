@@ -114,7 +114,7 @@ const mensajesAutomaticos = [
   {
     titulo: '`💡` Consejo... `💡`',
     color: '#E4FA00',
-    descripcion: 'Despues de salir de servicio recuerda usar: `/racntv` esto para eliminar los vehículos innecesarios.',
+    descripcion: 'Despues de salir de servicio recuerda usar: `/racntv` esto para eliminar los vehículos innecesarios, ¡Que no se te olvide!',
   }
 ];
 
