@@ -3,7 +3,10 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const axios = require('axios');
 const fs = require('fs');
-const { prefix } = require('./config.json');
+
+// Obteniendo el prefijo desde el archivo .env
+const prefix = process.env.PREFIX;
+
 const canalesPermitidos = [
   '1151698285254410390', 
   '1164918751158878259', 
